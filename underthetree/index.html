@@ -29,7 +29,12 @@
       </svg>
       <svg viewBox="0 0 564.5 282.3" class="subtitle">
         <use xlink:href="assets/img/symbols.svg#eng-subtitle"></use>
-      </svg><a href="https://www.youtube.com/watch?v=HVI7zTp-zyE&amp;feature=youtu.be" class="btn-watch">Watch the teaser</a>
+      </svg>
+      <div id="teaser" class="video-container">
+        <div class="video">
+          <iframe src="https://player.vimeo.com/video/128007181?color=fff0dd&amp;title=0&amp;byline=0&amp;portrait=0&amp;api=1&amp;player_id=player1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="vid_1"></iframe>
+        </div><a href="#0" class="close-btn"></a>
+      </div><a href="#teaser" class="btn-watch">Watch the teaser</a>
       <h3>June 7<sup>th</sup> 2015<br>Cinema South Festival<br><span>Sderot, Israel</span></h3>
       <hr>
       <p class="staff">Screenplay &amp; Director<strong> Demian Tzatzkin</strong></p>
@@ -48,6 +53,34 @@
     <section class="section section-dark text-center"><a href="mailto:demian@tzatzk.in" class="links"><img src="assets/img/icon-email.svg" class="footer-icons"></a><a href="https://www.facebook.com/underthetreefilm?ref=hl" class="links"><img src="assets/img/icon-facebook.svg" class="footer-icons small"></a></section>
     <script type="text/javascript" src="assets/js/pe-scrollchange.min.js"></script>
     <script>
+      var watch = document.querySelector('.btn-watch');
+      var videoCont = document.querySelector('.video-container');
+      var closeVideo = document.querySelector('.close-btn');
+      var player = document.getElementById("vid_1");
+      
+      function watchVideo(){
+        videoCont.classList.add('open');
+        play_video();
+      }
+      
+      function stopVideo(){
+        videoCont.classList.remove('open');
+        stop_video();
+      }
+      
+      function play_video() {
+        var data = { method: "play" };
+        player.contentWindow.postMessage(JSON.stringify(data), "*");
+      }
+      
+      function stop_video() {
+        var data = { method: "unload" };
+        player.contentWindow.postMessage(JSON.stringify(data), "*");
+      }
+      
+      watch.addEventListener( 'click', watchVideo, false);
+      closeVideo.addEventListener( 'click', stopVideo, false);
+      
       var sec = document.querySelector('.section-main');
       var mt = function() {
         return parseInt( window.getComputedStyle(sec, null).getPropertyValue('margin-top'), 10);
