@@ -49,6 +49,9 @@ hr {
       -ms-transform: translateY(-6.62vw) translateX(-11vw);
           transform: translateY(-6.62vw) translateX(-11vw);
 }
+.main-image.fixed {
+  position: fixed;
+}
 
 .main-title {
   width: 40vw;
@@ -83,7 +86,7 @@ hr {
   border: 1px solid;
   font-size: 12px;
   text-decoration: none;
-  font-weight: 100;
+  font-weight: 400;
 }
 .btn-watch:hover {
   color: #fff0dd;

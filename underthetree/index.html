@@ -46,6 +46,21 @@
     </section>
     <section class="section section-light text-center"><img src="assets/img/logo-footer-1.svg" class="footer-logo"><img src="assets/img/logo-footer-2.svg" class="footer-logo"><img src="assets/img/logo-footer-3.svg" class="footer-logo"><img src="assets/img/logo-footer-4.svg" class="footer-logo small"></section>
     <section class="section section-dark text-center"><a href="mailto:demian@tzatzk.in" class="links"><img src="assets/img/icon-email.svg" class="footer-icons"></a><a href="https://www.facebook.com/underthetreefilm?ref=hl" class="links"><img src="assets/img/icon-facebook.svg" class="footer-icons small"></a></section>
-    <script></script>
+    <script type="text/javascript" src="assets/js/pe-scrollchange.min.js"></script>
+    <script>
+      var sec = document.querySelector('.section-main');
+      var mt = function() {
+        return parseInt( window.getComputedStyle(sec, null).getPropertyValue('margin-top'), 10);
+      }
+      
+      peScrollChange.init({
+        elem: '.main-image',
+        trigger: mt(),
+        classesToChange: 'fixed',
+        offset: 0,
+        removeClass: false
+      })
+          
+    </script>
   </body>
 </html>
