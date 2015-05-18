@@ -44,7 +44,7 @@
         <div class="video">
           <iframe src="https://player.vimeo.com/video/128007181?color=fff0dd&amp;title=0&amp;byline=0&amp;portrait=0&amp;api=1&amp;player_id=player1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="vid_1"></iframe>
         </div><a href="#0" class="close-btn"></a>
-      </div><a href="#teaser" class="btn-watch">Watch the teaser</a>
+      </div><a href="#teaser" class="btn-watch">Watch the teaser</a><a href="https://vimeo.com/128007181" class="or-watch">or go to Vimeo</a>
       <h3>June 7<sup>th</sup> 2015<br>Cinema South Festival<br><span>Sderot, Israel</span></h3>
       <hr>
       <p class="staff">Screenplay &amp; Director<strong> Demian Tzatzkin</strong></p>
@@ -60,7 +60,16 @@
       <p class="staff">Set Design<strong> Chen Yege</strong></p>
     </section>
     <section class="section section-light text-center"><img src="assets/img/logo-footer-1.svg" class="footer-logo"><img src="assets/img/logo-footer-2.svg" class="footer-logo"><img src="assets/img/logo-footer-3.svg" class="footer-logo"><img src="assets/img/logo-footer-4.svg" class="footer-logo small"></section>
-    <section class="section section-dark text-center"><a href="mailto:demian@tzatzk.in" class="links"><img src="assets/img/icon-email.svg" class="footer-icons"></a><a href="https://www.facebook.com/underthetreefilm?ref=hl" class="links"><img src="assets/img/icon-facebook.svg" class="footer-icons small"></a></section>
+    <section class="section section-dark text-center"><a href="mailto:demiantz@gmail.com" class="links">
+        <svg viewBox="0 0 564.5 282.3" class="footer-icons">
+          <use xlink:href="assets/img/symbols.svg#icon-email"></use>
+        </svg></a><a href="https://www.facebook.com/underthetreefilm?ref=hl" class="links">
+        <svg viewBox="0 0 564.5 282.3" class="footer-icons">
+          <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
+        </svg></a><a href="https://vimeo.com/128007181" class="links">
+        <svg viewBox="0 0 564.5 282.3" class="footer-icons">
+          <use xlink:href="assets/img/symbols.svg#icon-vimeo"></use>
+        </svg></a></section>
     <script>
       var watch = document.querySelector('.btn-watch');
       var videoCont = document.querySelector('.video-container');
@@ -70,11 +79,13 @@
       function watchVideo(){
         videoCont.classList.add('open');
         play_video();
+        ga('send', 'event', 'video', 'watched');
       }
       
       function stopVideo(){
         videoCont.classList.remove('open');
         stop_video();
+        ga('send', 'event', 'video', 'closed');
       }
       
       function play_video() {

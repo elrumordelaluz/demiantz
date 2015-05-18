@@ -89,10 +89,23 @@ hr {
   font-size: 12px;
   text-decoration: none;
   font-weight: 400;
+  -webkit-transition: .2s;
+          transition: .2s;
 }
 .btn-watch:hover {
   color: #fff0dd;
   background-color: #4e4d4f;
+}
+
+.or-watch {
+  display: block;
+  text-decoration: none;
+  color: #4e4d4f;
+  font-size: 11px;
+  margin-top: 5px;
+}
+.or-watch:hover {
+  text-decoration: underline;
 }
 
 .text-center {
@@ -133,10 +146,23 @@ h3 span {
 
 .footer-icons {
   width: 50px;
-  margin-right: 10px;
+  height: 100%;
+  -webkit-transition: .2s;
+          transition: .2s;
+}
+.footer-icons {
+  fill: #fff0dd;
 }
 .footer-icons.small {
   width: 32px;
+}
+.footer-icons:hover {
+  fill: white;
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  -webkit-transform: scale(1.1, 1.1);
+      -ms-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 
 .section-dark {
