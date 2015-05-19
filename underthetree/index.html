@@ -44,20 +44,20 @@
         <div class="video">
           <iframe src="https://player.vimeo.com/video/128007181?color=fff0dd&amp;title=0&amp;byline=0&amp;portrait=0&amp;api=1&amp;player_id=player1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen id="vid_1"></iframe>
         </div><a href="#0" class="close-btn"></a>
-      </div><a href="#teaser" class="btn-watch">Watch the teaser</a><a href="https://vimeo.com/128007181" class="or-watch">or go to Vimeo</a>
-      <h3>June 7<sup>th</sup> 2015<br>Cinema South Festival<br><span>Sderot, Israel</span></h3>
+      </div><a href="#teaser" class="btn-watch">Watch the teaser</a><a href="https://vimeo.com/128007181" class="or-watch">for HD go to Vimeo</a>
+      <h3>June 7<sup>th</sup> 2015<br><a href="http://csf.sapir.ac.il/films/%D7%9E%D7%AA%D7%97%D7%AA-%D7%9C%D7%A2%D7%A5/" target="_blank">Cinema South Festival</a><br><span>Sderot, Israel</span></h3>
       <hr>
       <p class="staff">Screenplay &amp; Director<strong> Demian Tzatzkin</strong></p>
       <p class="staff">Producer<strong> Dana Naftaly</strong></p>
       <p class="staff">Assistant Director<strong>  Amit Yogev</strong></p>
       <p class="staff">Director of Photography<strong> Tal Raz</strong></p>
-      <p class="staff">Editor<strong> Noga Gila</strong></p>
+      <p class="staff">Editor<strong> Noga Gilad</strong></p>
       <p class="staff">Lighting<strong> Yuval Lester</strong></p>
       <p class="staff">Sound Recorder<strong> Nir Aviam</strong></p>
-      <p class="staff">Sound Editor<strong> Adi Arel</strong></p>
+      <p class="staff">Sound Editor<strong> Adi Harel</strong></p>
       <p class="staff">Music<strong> Moshe Silver</strong></p>
       <p class="staff">Online<strong> Amir Jorji</strong></p>
-      <p class="staff">Set Design<strong> Chen Yege</strong></p>
+      <p class="staff">Set Design<strong> Chen Yeger</strong></p>
     </section>
     <section class="section section-light text-center"><img src="assets/img/logo-footer-1.svg" class="footer-logo"><img src="assets/img/logo-footer-2.svg" class="footer-logo"><img src="assets/img/logo-footer-3.svg" class="footer-logo"><img src="assets/img/logo-footer-4.svg" class="footer-logo small"></section>
     <section class="section section-dark text-center"><a href="mailto:demiantz@gmail.com" class="links">
@@ -72,6 +72,7 @@
         </svg></a></section>
     <script>
       var watch = document.querySelector('.btn-watch');
+      var orwatch = document.querySelector('.or-watch');
       var videoCont = document.querySelector('.video-container');
       var closeVideo = document.querySelector('.close-btn');
       var player = document.getElementById("vid_1");
@@ -88,6 +89,10 @@
         ga('send', 'event', 'video', 'closed');
       }
       
+      function gotoVimeo(){
+        ga('send', 'event', 'video', 'vimeo');
+      }
+      
       function play_video() {
         var data = { method: "play" };
         player.contentWindow.postMessage(JSON.stringify(data), "*");
@@ -100,6 +105,7 @@
       
       watch.addEventListener( 'click', watchVideo, false);
       closeVideo.addEventListener( 'click', stopVideo, false);
+      orwatch.addEventListener( 'click', gotoVimeo, false);
       
           
     </script>
