@@ -103,6 +103,7 @@ hr {
   color: #4e4d4f;
   font-size: 11px;
   margin-top: 5px;
+  font-weight: 700;
 }
 .or-watch:hover {
   text-decoration: underline;
